@@ -3,14 +3,12 @@ uart.setup(2, 9600, 8, uart.PARITY_NONE, uart.STOPBITS_1, {tx = 17, rx = 16})
 uart.start(2)
 sendRAW = {171,2,0,0,0,128,0,0,0,0,0,0,0,0,0}
 
-
 crcR = 0
 gotRAW = {}
 counter = 0
 moder = 0
 
 startUART = false
-
 
 function ptrANSW()
     local crc = 0
