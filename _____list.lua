@@ -1,4 +1,4 @@
--- Commands
+-- Commands List Now All commands
 
 dofile"__testMTRF.lua"
 
