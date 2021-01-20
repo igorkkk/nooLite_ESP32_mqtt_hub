@@ -38,6 +38,7 @@ do
         end)
 
         m:on("message", function(con, top, dt)
+            local comtb = {}
             killtop[1] = tonumber(string.match(top, "/(%w+)$")) or 65
             if killtop[1] ~= 65 then 
                 killtop[2], killtop[3] =  string.match(dt, '{"(%w+)":"?(%w+)"?}') 
