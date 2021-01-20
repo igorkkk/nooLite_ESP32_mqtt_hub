@@ -1,5 +1,5 @@
 do
-    if not killtop then killtop = {} end
+    if not comtb then comtb = {} end
     if not dat then
         dat = {
             brk = 'iot.eclipse.org',
@@ -38,11 +38,12 @@ do
         end)
 
         m:on("message", function(con, top, dt)
-            local comtb = {}
+            local killtop = {}
             killtop[1] = tonumber(string.match(top, "/(%w+)$")) or 65
             if killtop[1] ~= 65 then 
                 killtop[2], killtop[3] =  string.match(dt, '{"(%w+)":"?(%w+)"?}') 
                 print('MQTT Got:', killtop[1], killtop[2], killtop[3])
+                table.insert(comtb, killtop)
                 dofile('run.lua')
             end
         end)

@@ -11,7 +11,8 @@ pubnow = function(top, dt)
 		--print(wth.heap, wth.reg)
 		top, dt, pubnow, count = nil, nil, nil, nil
 		wth = {} 
-		if dat.boot then dofile('sendboot.lua') end
+		if dat.boot then dofile('sendboot.lua') end\
+		if comtb and #comtb > 0 then dofile('run.lua') end 
 	end
 end
 pubnow()

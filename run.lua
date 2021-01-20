@@ -1,4 +1,12 @@
 --print('run!')
+if comtb and #comtb > 0 then 
+    local killtop = table.remove(comtb)
+    dat.running = true 
+else
+    dat.running = false
+    return
+end
+
 local func = killtop[2]
 if func == 'brgt' or func == 'brgtf' then 
     dofile('brgt.lua')(); return
