@@ -44,7 +44,7 @@ do
                 killtop[2], killtop[3] =  string.match(dt, '{"(%w+)":"?(%w+)"?}') 
                 print('MQTT Got:', killtop[1], killtop[2], killtop[3])
                 table.insert(comtb, killtop)
-                dofile('run.lua')
+                if not dat.running then dofile('run.lua') end
             end
         end)
         return m
