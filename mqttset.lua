@@ -42,7 +42,7 @@ do
             if killtop[1] ~= 65 then 
                 killtop[2], killtop[3] =  string.match(dt, '{"(%w+)":"?(%w+)"?}') 
                 print('MQTT Got:', killtop[1], killtop[2], killtop[3])
-                dofile('run.lua')
+                if file.exists('run.lua') then dofile('run.lua') end
             end
         end)
         return m
