@@ -1,12 +1,5 @@
 do
     if not comtb then comtb = {} end
-    if not dat then
-        dat = {
-            brk = 'iot.eclipse.org',
-            port = 1883,
-            clnt = 'nooliteMTRF'
-        }
-    end
     local brk = dat.brk
     dat.brk = nil
     local port = dat.port
@@ -16,7 +9,8 @@ do
     function subscribe(con)
         print("connected")
         dat.broker = true
-        con:subscribe(dat.clnt.."/com/#", 0)
+        --con:subscribe(dat.clnt.."/com/#", 0)
+        con:subscribe("nooliteMTRF".."/com/#", 0)
         con:publish(dat.clnt..'/state', "ON", 0, 1)
         print("Subscribed")
     end

@@ -98,12 +98,3 @@ for i = 1, 15 do crc = crc + pat[i] end
 pat[16] = bit.band(crc, 0xFF)
 pat[17] = 172
 for i=1,17 do uart.write(2, pat[i]) end
-
---!!!!!!!!!!!!!!!!!!!!!!!!! for testing wihout MTRF64
--- wth.send = ''
--- for i = 1, #pat do
---     wth.send = wth.send..pat[i]..' '
--- end
--- wth.test = "testing!!!!"
--- print(wth.send, wth.test)
--- dofile"mqttpub.lua" -- !!!!!!!!!!!!!!!!!!!!!!

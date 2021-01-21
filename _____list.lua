@@ -1,8 +1,4 @@
-<<<<<<< HEAD
--- Commands List Now All Commands!!! (just test to new branch)
-=======
 -- Commands List Now All Commands!!! (just test 20210120)
->>>>>>> main
 
 dofile"__testMTRF.lua"
 

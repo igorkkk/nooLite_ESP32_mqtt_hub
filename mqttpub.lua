@@ -1,8 +1,9 @@
-print('mqttpub now')
+--print('mqttpub now')
 local count = 0
 for _ in pairs(debug.getregistry()) do  count = count + 1 end
---wth.reg = '{"cell":65,"reg":"'..count..'"}' 
---wth.heap = '{"cell":65,"heap":"'..node.heap()..'"}'
+wth.reg = count 
+wth.heap = node.heap()
+
 local pubnow
 pubnow = function(top, dt)
 	top, dt = next(wth, top)
