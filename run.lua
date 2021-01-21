@@ -1,9 +1,31 @@
 --print('run!')
+local killtop
+if not dat.killcmdtb then 
+    dat.killcmdtb = tmr.create()
+    dat.killcmdtb:register(2000, tmr.ALARM_SEMI, function (t)
+        if comtb and #comtb > 0 then 
+            print('#comtb = '..#comtb..' run.lua starts')
+            dofile'run.lua'
+        else
+            t:stop()
+            t:unregister()
+            t, dat.killcmdtb = nil, nil
+            print('\t\t\ttable "ncmdtb" killed!')
+        end
+    end)
+    dat.killcmdtb:start()
+end
+
 if comtb and #comtb > 0 then 
-    local killtop = table.remove(comtb)
-    dat.running = true 
+    dat.killcmdtb:stop()
+    killtop = table.remove(comtb)
+    dat.running = true
+    dat.killcmdtb:start() 
 else
     dat.running = false
+    dat.killcmdtb:stop()
+    dat.killcmdtb:unregister()
+    dat.killcmdtb = nil
     return
 end
 
@@ -76,3 +98,12 @@ for i = 1, 15 do crc = crc + pat[i] end
 pat[16] = bit.band(crc, 0xFF)
 pat[17] = 172
 for i=1,17 do uart.write(2, pat[i]) end
+
+--!!!!!!!!!!!!!!!!!!!!!!!!! for testing wihout MTRF64
+-- wth.send = ''
+-- for i = 1, #pat do
+--     wth.send = wth.send..pat[i]..' '
+-- end
+-- wth.test = "testing!!!!"
+-- print(wth.send, wth.test)
+-- dofile"mqttpub.lua" -- !!!!!!!!!!!!!!!!!!!!!!
