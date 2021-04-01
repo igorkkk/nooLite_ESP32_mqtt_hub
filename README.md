@@ -6,3 +6,5 @@ nooLite <=> MTRF64 <=> ESP32 <=> MQTT Broker
 ESP32 на бутылку пива дороже ESP8266, а сколько радости в ней. 
 Как минимум, не надо мучиться с UART.
 Вот поэтому и буду работать с ней.
+
+Последняя версия назодится в ветке https://github.com/igorkkk/nooLite_ESP32_mqtt_hub/tree/multicommand 
