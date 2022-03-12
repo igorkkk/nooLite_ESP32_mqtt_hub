@@ -20,7 +20,7 @@ local call = function(t)
 		t:unregister()
 		t = nil
 		risetimers[itm] = nil
-		if #risetimers = 0 then risetimers = nil end
+		if #risetimers == 0 then risetimers = nil end
 		wth[itm] = '{"cell":'..itm..',"state":"Off"}'
 		print('Timer '..itm..' Killed!')
 	else

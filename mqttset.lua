@@ -4,6 +4,10 @@ do
     dat.brk = nil
     local port = dat.port
     dat.port = nil
+    local user = dat.user
+    dat.user = nil
+    local passw = dat.passw
+    dat.passw = nil
     local subscribe, merror, newm, mconnect
     
     function subscribe(con)
@@ -22,7 +26,7 @@ do
     end
     
     function newm()
-        m = mqtt.Client(dat.clnt, 25, dat.clnt, 'pass22')
+        m = mqtt.Client(dat.clnt, 90, user, passw)
         m:lwt(dat.clnt..'/state', "OFF", 0, 1)
         m:on("offline", function(con)
             con:close()
