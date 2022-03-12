@@ -3,5 +3,5 @@ timezone = 'EST-3'
 dat.clnt = 'nooliteMTRF'
 dat.brk = 'iot.eclipse.org'
 dat.port = 1883
--- dat.user = 'user'
--- dat.passw = 'password'
+dat.user = 'user123475'
+dat.passw = 'password'
