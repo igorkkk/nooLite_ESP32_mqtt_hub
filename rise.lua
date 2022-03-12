@@ -1,4 +1,4 @@
-if risetimers and risetimers[itm] then print('Rise Ranning Now!'); return end 
+if risetimers and risetimers[itm] then print('Rise Running Now!'); return end 
 if not wth then wth = {} end
 if not risetimers then risetimers = {} end
 local itm
